@@ -63,7 +63,7 @@ public class FlightStatistics {
                 bw.write(entry.getKey() + " -> " + entry.getValue().toString().substring(2).toLowerCase());
                 bw.newLine();
             }
-            bw.write("2) Разницу между средней ценой и медианой для полета между городами " +
+            bw.write("2) Разница между средней ценой и медианой для полета между городами " +
                     "Владивосток и Тель-Авив: " + priceStatistics);
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,7 +75,7 @@ public class FlightStatistics {
         for (Map.Entry<String, Duration> entry : minDurationForCarriers.entrySet()) {
             System.out.println(entry.getKey() + " -> " + entry.getValue().toString().substring(2).toLowerCase());
         }
-        System.out.println("2) Разницу между средней ценой и медианой для полета между городами " +
+        System.out.println("2) Разница между средней ценой и медианой для полета между городами " +
                 "Владивосток и Тель-Авив: " + priceStatistics);
     }
 }

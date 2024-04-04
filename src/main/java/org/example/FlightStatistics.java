@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.math3.stat.descriptive.rank.Median;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -55,7 +56,7 @@ public class FlightStatistics {
     }
 
     public void writeAnswerInFile(Map<String, Duration> minDurationForCarriers, double priceStatistics) throws IOException {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("answer.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("answer.txt", StandardCharsets.UTF_8))) {
             bw.write("1) Минимальное время полета между городами Владивосток и Тель-Авив для каждого авиаперевозчика: "
                     + System.lineSeparator());
             for (Map.Entry<String, Duration> entry : minDurationForCarriers.entrySet()) {
